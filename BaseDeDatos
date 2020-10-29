@@ -1,8 +1,7 @@
 Para el uso de la base de datos usar Hamachi 
-Usuario> sistemasinf2
-password> 123456
+Usuario> 	kbtkvadi
+password> 	1sCFv0Nx_85BOI5dLxuzPzTWgxhRbhSh
 Para conectarse a la base de datos>
-Servidor>25.7.49.78
-basedeDatos>tallerbase
-usuario>sis2
-password>1234
+Servidor>	tuffi.db.elephantsql.com
+basedeDatos>	kbtkvadi
+
