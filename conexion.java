@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 public class conexion
 {
     private Connection connection;
+    private ResultSet result;
     private static String driver="org.postgresql.Driver";
     private String url = "jdbc:postgresql://tuffi.db.elephantsql.com:5432/kbtkvadi",
                       user = "kbtkvadi",
@@ -30,7 +31,7 @@ public class conexion
             Statement statem =   connection.createStatement();
             String query  = "SELECT nombre,puntaje  FROM receta WHERE nombre = '" +recipe+ "'    ;";
             
-            ResultSet result = statem.executeQuery(query);
+            result = statem.executeQuery(query);
             if(result.next())
             {
               
@@ -51,5 +52,21 @@ public class conexion
         }
         
     }
-    
+      
+      public ResultSet getResultSet( )
+      {
+           
+          try 
+            {
+                Statement statem =   connection.createStatement();
+                String query  = "SELECT * FROM chat ORDER BY id ;";
+              
+                result = statem.executeQuery(query);
+                    
+            } catch (SQLException ex) {
+             ex.printStackTrace();
+            }
+       return result;      
+      }
+      
 }
