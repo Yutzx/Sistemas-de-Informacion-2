@@ -2,15 +2,15 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Conexion
+public class conexion
 {
     private Connection connection;
     private static String driver="org.postgresql.Driver";
-    private static String url="jdbc:postgresql://25.7.49.78:1433;databaseName=tallerbase";
-    private static String user="sis2";
-    private static String pass="1234";
+    private String url = "jdbc:postgresql://tuffi.db.elephantsql.com:5432/kbtkvadi",
+                      user = "kbtkvadi",
+                    pass = "1sCFv0Nx_85BOI5dLxuzPzTWgxhRbhSh"; 
    
-    public Conexion()
+    public conexion()
     {      
         try
         {
