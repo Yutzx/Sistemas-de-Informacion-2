@@ -155,4 +155,9 @@ public class BaseDeDatos {
            }
        }
   
+        
+        public Connection getConnection()
+        {
+            return baseDatos;
+        }
 }

@@ -1,4 +1,3 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,8 +17,8 @@ public class Interfaz2 implements ActionListener{
     private JButton thebutton2;
     private JLabel thelabel;
     
-    public Interfaz2(){
-        loader = new Downloader();
+    public Interfaz2(BaseDeDatos bd ){
+        loader = new Downloader(bd);
         theframe= new JFrame();
         
         thebutton= new JButton("Descargar conversación");

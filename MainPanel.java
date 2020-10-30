@@ -27,7 +27,7 @@ public class MainPanel extends JFrame implements ActionListener
         
         
                 boton1 = new JButton("Programar una reunion");                
-		boton2 = new JButton("Chatear con usuarios");
+		boton2 = new JButton("Descagar conversacion");
                 boton3 = new JButton("Entrar a una Reunion");
                 boton4= new JButton("Compartir pantalla");
                                               	
@@ -51,7 +51,7 @@ public class MainPanel extends JFrame implements ActionListener
       } });
     boton2.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent ae){
-            Interfaz2 theinter= new Interfaz2();
+            Interfaz2 theinter= new Interfaz2(bd);
       } });
      boton3.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent ae){

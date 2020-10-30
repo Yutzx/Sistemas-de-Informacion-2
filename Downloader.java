@@ -11,9 +11,9 @@ public class Downloader {
     ResultSet rst;
     FileWriter file;
     BaseDeDatos conn;
-    Downloader(){
+    Downloader(BaseDeDatos bd){
         //file = new File("fileChat.txt");
-        conn = new BaseDeDatos();
+        conn = bd ;
     }
     
     public void downloadChat(){
