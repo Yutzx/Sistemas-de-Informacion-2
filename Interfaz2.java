@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class Interfaz2 implements ActionListener{
     private Downloader loader;
@@ -37,7 +38,7 @@ public class Interfaz2 implements ActionListener{
         
         thelabel= new JLabel("Seleccione una opción");
         thelabel.setBounds(140,30,180,35);
-        
+        theframe.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         thepanel= new JPanel();
         thepanel.setLayout(null);
         
@@ -49,7 +50,7 @@ public class Interfaz2 implements ActionListener{
         theframe.setLocation(500,500);
         theframe.setSize(450,200);
         theframe.add(thepanel);
-        theframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   
         theframe.setTitle("Historia del chat");
         theframe.setVisible(true);
         

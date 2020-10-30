@@ -32,6 +32,8 @@ public class Downloader {
         }
                     
         file.close();
+        conn.close();
+        
 
         }catch(Exception ex){
             System.out.println("No ha sido posible escribir en el fichero: " + ex.getMessage());
