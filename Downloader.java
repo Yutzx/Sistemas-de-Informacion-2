@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package proyect;
+
+//package proyect;
 
 import java.io.FileWriter;
 import java.sql.ResultSet;
@@ -14,10 +10,10 @@ import java.sql.ResultSet;
 public class Downloader {
     ResultSet rst;
     FileWriter file;
-    Conexion conn;
+    BaseDeDatos conn;
     Downloader(){
         //file = new File("fileChat.txt");
-        conn = new Conexion();
+        conn = new BaseDeDatos();
     }
     
     public void downloadChat(){
