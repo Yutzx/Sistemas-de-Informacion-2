@@ -68,5 +68,16 @@ public class conexion
             }
        return result;      
       }
+
+  public void close()
+      {
+          try
+          {
+          connection.close();
+          } catch (SQLException ex)
+          {
+            ex.printStackTrace();
+           }
+       }
       
 }
