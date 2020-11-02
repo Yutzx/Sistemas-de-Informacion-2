@@ -125,7 +125,10 @@ public class BaseDeDatos {
         }
         return res;
     }
-    
+       /**
+       *Obtiene los datos de la convesacion escrita de la reunion actual
+       *@return ResultSet
+       */
     
        public ResultSet getResultSet( )
       {
@@ -136,26 +139,16 @@ public class BaseDeDatos {
                 String query  = "SELECT * FROM chat ORDER BY id ;";
               
                 rs = statem.executeQuery(query);
-                    
+               baseDatos.close();
             } catch (SQLException ex) {
              ex.printStackTrace();
             }
        return rs;      
       }
-
-       
-        public void close()
-      {
-          try
-          {
-          baseDatos.close();
-          } catch (SQLException ex)
-          {
-            ex.printStackTrace();
-           }
-       }
-  
-        
+       /**
+        *Retorna la conexión a la base de datos actual.
+        *@return Connection
+        */        
         public Connection getConnection()
         {
             return baseDatos;
