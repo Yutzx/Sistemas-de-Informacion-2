@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
- *
+ *  Clase que ejecutara todas las funcionalidades del programa
  * @author Camila
  */
 public class MainPanel extends JFrame implements ActionListener
@@ -16,7 +16,10 @@ public class MainPanel extends JFrame implements ActionListener
     private JPanel main = new JPanel ();
     private JButton boton1, boton2, boton3, boton4;
     private BaseDeDatos bd;
-    
+    /**
+     * Inicializa todas las variable (metodo constructor) y asigna funciones a los botones.
+     * @param baseD - conexion con la base de datos
+     */
     public MainPanel(BaseDeDatos baseD){
         setSize(270, 270);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -69,4 +72,5 @@ public class MainPanel extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent ae) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
 }

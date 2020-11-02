@@ -4,6 +4,10 @@ import java.sql.*;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+/**
+ * Clase encargada de la conexión con la base de datos y todas las consultas correspondientes.
+ * @author 
+ */
 public class BaseDeDatos {
     Connection BaseDatos = null;    
     //Donde se localiza la base de datos
@@ -12,7 +16,9 @@ public class BaseDeDatos {
     String usuario="kbtkvadi";
     String contrasena="1sCFv0Nx_85BOI5dLxuzPzTWgxhRbhSh";
     private int pid;
-
+    /**
+     * metodo constructor encargado de iniciar la conexion con la base de datos
+     */
     public BaseDeDatos()  {  
     try {
         BaseDatos = DriverManager.getConnection(url, usuario, contrasena);
@@ -21,6 +27,14 @@ public class BaseDeDatos {
         }
     pid = obtenerPid();
     }
+    /**
+     * Metodo que se encarga de comprobar que existe el usuario y password ingresado son correctos mediante sql
+     * @param txt - nombre de usuario a comprobar
+     * @param txtPass - contraseña del usuario a comprobar
+     * @param est - boolean que controla si esta ingresando o cerrando sesion
+     * @return 
+     */
+     
     public boolean comprobarExiste(String txt, String txtPass,boolean est){
         boolean res=false;
         Statement st = null;
@@ -36,7 +50,7 @@ public class BaseDeDatos {
             String password = rs.getString(3);
             if(txtPass.equals(password)){                
                 System.out.println("Contraseña correcta");
-                registrarLogin(id_usuario,txt,txtPass,est);
+                registrarLogin(id_usuario,est);
                 res = true;
             }else{
                 JOptionPane.showMessageDialog(new JPanel(), "La contraseña es incorrecta", "Contraseña Erronea", JOptionPane.INFORMATION_MESSAGE);
@@ -51,8 +65,12 @@ public class BaseDeDatos {
         }
         return res;
     }
-
-    private void registrarLogin(int id_usuario, String txt, String txtPass,boolean act) {
+    /**
+     * Metodo encargado de insertar en la base de datos los datos del usuario que logro iniciar sesion con exito.
+     * @param id_usuario - nombre de usuario a registrar 
+     * @param act - estado que verifica si es inicio de seion o cierre de sesion
+     */
+    private void registrarLogin(int id_usuario,boolean act) {
         Statement st = null;
         try {    
         st = BaseDatos.createStatement();
@@ -67,7 +85,10 @@ public class BaseDeDatos {
         }
         
     }
-
+    /**
+     * Metodo para conseguir el valor de PID de la base de datos
+     * @return retorna un entero 
+     */
     private int obtenerPid() {
         int res = 0;
         Statement st = null;
@@ -84,6 +105,9 @@ public class BaseDeDatos {
         }
         return res;
     }
+    /**
+     * Metodo encargado de actualizar un inicio de sesion a cierre de sesion.
+     */
     public void actualizarTabla(){
        Statement st = null;
         try {    
@@ -97,8 +121,13 @@ public class BaseDeDatos {
         }catch (SQLException j) {
         System.err.println( j.getMessage() );
         }
-    
     }
+    /**
+     * Metodo encargado de crear la reserva de la reunion en la base de datos.
+     * @param id1 - id del usuario que creo la reuion
+     * @param hora - hora fijada para la reunion
+     * @param fecha - fecha fijada para la reunion
+     */
     public void crearReunion(int id1,String hora, java.util.Date fecha){
         Statement st = null;
         try {    
@@ -111,6 +140,10 @@ public class BaseDeDatos {
         System.err.println( j.getMessage() );
         }
     }
+    /**
+     * Metodo que retorna el id del usuario en sesion
+     * @return retorna un entero
+     */
     public int getIdusr(){
         int res = 0;
         Statement st = null;
@@ -127,6 +160,10 @@ public class BaseDeDatos {
         }
         return res;
     }
+    /**
+     * Este metodo se encarga de retorna una consulta de la tabla mensajes
+     * @return retorna una consulta.
+     */
      public ResultSet getResultSet( )
       {
            ResultSet result=null;
@@ -142,7 +179,9 @@ public class BaseDeDatos {
             }
        return result;      
       }
-
+     /**
+      * Metodo que cierra la conexion con la base de datos  
+      */
   public void close()
       {
           try

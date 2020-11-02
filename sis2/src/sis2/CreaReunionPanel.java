@@ -1,4 +1,3 @@
-
 package sis2;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -7,15 +6,16 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import com.toedter.calendar.*;
 import java.time.LocalTime;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import lu.tudor.santec.jtimechooser.JTimeChooser;
+/**
+ * Clase que crea la interfaz para crear la reunion.
+ * @author GAMER
+ */
 public class CreaReunionPanel extends JFrame implements ActionListener {
 
     private JPanel main = new JPanel();
@@ -63,6 +63,10 @@ public class CreaReunionPanel extends JFrame implements ActionListener {
         add(main);
         setVisible(true);
     }
+    /**
+     * Metodo que asigna su funcionalidad a los botones de la interfaz
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e){
 
@@ -107,6 +111,10 @@ public class CreaReunionPanel extends JFrame implements ActionListener {
             this.dispose();
         }
     }
+    /**
+     * Metodo encargado de mostrar un panel emergente. 
+     * @param msg - mensaje que se mostrara en el panel.
+     */
     
     public void mostrarAlerta(String msg){     
             JOptionPane.showMessageDialog(new JPanel(), msg, "ALERTA!", JOptionPane.INFORMATION_MESSAGE);

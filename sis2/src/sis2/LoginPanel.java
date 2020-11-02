@@ -9,8 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+/**
+ * Clase encargada de la interfaz de inicio y cierre de sesion.
+ * @author GAMER
+ */
 public class LoginPanel extends JFrame implements ActionListener {
 
     private JPanel main = new JPanel();
@@ -65,6 +68,10 @@ public class LoginPanel extends JFrame implements ActionListener {
         close.setEnabled(false);
         close.setFocusable(false);
     }
+    /**
+     * Metodo que controla los click en los botones de la interfaz.
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e){
 
@@ -83,6 +90,9 @@ public class LoginPanel extends JFrame implements ActionListener {
             sesionCerrada();
         }
     }
+    /**
+     * Metodo que bloquea el boton de iniciar sesion y las barras de texto.
+     */
     private void sesionIniciada(){
             start.setEnabled(false);
             start.setFocusable(false);
@@ -93,6 +103,9 @@ public class LoginPanel extends JFrame implements ActionListener {
             playerfield.setFocusable(false);
             playerfield1.setFocusable(false);
     }
+    /**
+     * Metodo que bloquea el boton de cerrar sesion y habilita las barra de texto y el boton de iniciar sesion
+     */
     private void sesionCerrada(){
             start.setEnabled(true);
             start.setFocusable(true);            
@@ -103,6 +116,10 @@ public class LoginPanel extends JFrame implements ActionListener {
             playerfield.setFocusable(true);
             playerfield1.setFocusable(true);
     }
+    /**
+     * Metodo principal
+     * @param args 
+     */
     public static void main(String args[]){  
             LoginPanel sc = new LoginPanel();            
     }
