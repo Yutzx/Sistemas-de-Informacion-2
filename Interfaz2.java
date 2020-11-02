@@ -10,6 +10,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
+/**
+ * Muestra la interfaz gr?fica para descargar el chat o cancelar dicha descarga
+ * @author Guillermo
+ */
 public class Interfaz2 implements ActionListener{
     private Downloader loader;
     private JFrame theframe;
@@ -18,6 +22,10 @@ public class Interfaz2 implements ActionListener{
     private JButton thebutton2;
     private JLabel thelabel;
     
+    /**
+     * Ingresa la base de Datos que deber?a contener el chat
+     * @param bd 
+     */
     public Interfaz2(BaseDeDatos bd ){
         loader = new Downloader(bd);
         theframe= new JFrame();
@@ -57,10 +65,10 @@ public class Interfaz2 implements ActionListener{
         
     }
     
-  //  public static void main(String[] args) {
-        // TODO code application logic here
-    //    Interfaz2 theinter= new Interfaz2();
-  //  }
+  /**
+   * Activa la acci?n deseada para cada bot?n
+   * @param e 
+   */
 
     @Override
     public void actionPerformed(ActionEvent e) {
